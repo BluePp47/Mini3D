@@ -30,7 +30,7 @@ public class CampFire : MonoBehaviour
         }
     }
 
-    private  void onTriggerExit(Collider other)
+    private  void OnTriggerExit(Collider other)
     {
         if(other.TryGetComponent(out IDamageable damageable))
         {
