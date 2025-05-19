@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Data : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[CreateAssetMenu(fileName = "DataCenta", menuName = "ScriptableObject/DataCenta", order =1)]
+public class Data : ScriptableObject
+{
+    [Header("player")]
+    [Tooltip]
+   
 }
