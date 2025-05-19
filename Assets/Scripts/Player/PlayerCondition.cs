@@ -46,12 +46,12 @@ public class PlayerCondition : MonoBehaviour, IDamageable
 
     public void Die()
     {
-
+        Debug.Log("Die");
     }
 
     public void TakePhysicalDamage(int damage)
     {
         health.Subtract(damage);
-        onTakeDamage.Invoke();
+        onTakeDamage?.Invoke();
     }
 }
