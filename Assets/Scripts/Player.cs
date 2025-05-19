@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public PlayerController Controller;
 
-    public void Awake()
+    private void Awake()
     {
         CharacterManager.Instance.Player = this;
         Controller = GetComponent<PlayerController>();

@@ -224,8 +224,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 0
-  minXLook: 0
-  maxXLook: 0
+  jumpPower: 0
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  cameraContainer: {fileID: 528644798}
+  minXLook: -85
+  maxXLook: 85
+  lookSensitivity: 0.1
+  canlook: 1
 --- !u!114 &297120273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +292,19 @@ MonoBehaviour:
     m_ActionId: bc89e11d-d103-47e7-883b-02d29f45bcc1
     m_ActionName: Player/Inventory[/Keyboard/tab]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 297120272}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJumpInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9acb1a65-7f54-4081-99cf-cee5fda9c152
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -293,7 +312,19 @@ MonoBehaviour:
     m_ActionId: bb044504-4b5a-409f-b147-a6a07faa3074
     m_ActionName: Player/Interaction[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 297120272}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: onLookInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a9d82652-2bcc-4d9d-bad5-e3cc3b6492c8
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
