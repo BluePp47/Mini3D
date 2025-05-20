@@ -1,12 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "DataCenta", menuName = "ScriptableObject/DataCenta", order =1)]
+//[CreateAssetMenu(fileName = "DataCenta", menuName = "ScriptableObject/DataCenta", order =1)]
 //public class Data : ScriptableObject
 //{
-//    [Header("player")]
-//    [Tooltip("players HP")]
-   
+//    public UICondition uicondition;
+
+//    [Header("Player")]
+//    [Tooltip("Players HP")]
+
+//    //[SerializeField]
+
+//    //private int hp = 222;
+
+//    public float HP { get { return uicondition.hunger; } }
+
+
 //}
