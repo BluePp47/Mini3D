@@ -2030,7 +2030,7 @@ MonoBehaviour:
   fullDayLength: 0
   startTime: 0.2
   noon: {x: 0, y: 0, z: 0}
-  sun: {fileID: 0}
+  sun: {fileID: 705507994}
   sunColor:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -2067,7 +2067,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  moon: {fileID: 0}
+  moon: {fileID: 1887708820}
   moonColor:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
