@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //���콺 ����� ��
+        //마우스 숨기는 법
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        SeeRay(); //기존 레이 발싸
     }
 
     private void LateUpdate()
@@ -133,6 +134,31 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canlook = !toggle;
+    }
+
+
+    //레이좀 봐야할듯?
+    void SeeRay()
+    {
+        Ray[] rays = new Ray[4]
+        {
+            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.right * 0.2f) +(transform.up * 0.01f), Vector3.down)
+        };
+        for (int i = 0; i < rays.Length; i++)
+        {
+            //Debug.DrawRay사용법
+            //DrawRay(설정해둔 레이배열.출발점 , 어디를향해쏠건지,보이는 색)
+
+            //레이 배열의 출발점 : 배열.origin하면 됨 origin은 유니티 제공임
+            //어디를 향해 쏠건지: 배열에 vector를 그대로 복붙하면됨
+            //보이는 색 :  색도 커스텀 가능임
+            Debug.DrawRay(rays[i].origin, Vector3.down * 0.1f, Color.red/*new Color(199f / 255f, 204f / 255f, 255 / 255f)*/);
+            
+        }
+
     }
 
 }

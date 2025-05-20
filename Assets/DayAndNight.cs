@@ -33,7 +33,7 @@ public class DayAndNight : MonoBehaviour
 
     private void Update()
     {
-        time = (time + timeRate * Time.deltaTime) % 1.0f;
+        time = 0.5f;//(time + timeRate * Time.deltaTime) % 1.0f;
 
         UpdateLighting(sun, sunColor, sunIntensity);
         UpdateLighting(moon, moonColor, moonIntensity);
@@ -53,7 +53,7 @@ public class DayAndNight : MonoBehaviour
 
         GameObject go = lightSource.gameObject;
         if (lightSource.intensity == 0 && go.activeInHierarchy)
-            go.SetActive(false);
+            go.SetActive(false); 
         else if (lightSource.intensity > 0 && !go.activeInHierarchy)
             go.SetActive(true);
     }
