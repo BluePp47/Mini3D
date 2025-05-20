@@ -25,13 +25,13 @@ public class DayAndNight : MonoBehaviour
     public AnimationCurve lightingIntensityMultiplier;
     public AnimationCurve reflectionIntensityMultiplier;
 
-    private void Start()
+     void Start()
     {
         timeRate = 1.0f / fullDayLength;
         time = startTime;
     }
 
-    private void Update()
+     void Update()
     {
         time = (time + timeRate * Time.deltaTime) % 1.0f;
 
@@ -43,12 +43,12 @@ public class DayAndNight : MonoBehaviour
 
     }
 
-    void UpdateLighting(Light lightSource, Gradient colorGradiant, AnimationCurve intensityCurve)
+    void UpdateLighting(Light lightSource, Gradient Gradiant, AnimationCurve intensityCurve)
     {
         float intensity = intensityCurve.Evaluate(time);
 
         lightSource.transform.eulerAngles = (time - (lightSource == sun ? 0.25f : 0.75f)) * noon * 4.0f;
-        lightSource.color = colorGradiant.Evaluate(time);
+        lightSource.color = Gradiant.Evaluate(time);
         lightSource.intensity = intensity;
 
         GameObject go = lightSource.gameObject;
