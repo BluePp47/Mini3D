@@ -11,7 +11,7 @@ public class Data : ScriptableObject
 
     private int hp = 222;
 
-    public float HP { get { return; } }
+    public float HP { get { return hp; } }
 
 
 }
