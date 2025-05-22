@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public PlayerController controller;
     public PlayerCondition condition;
 
+    public Data itemData;
+    public Data addItem;
+
     private void Awake()
     {
         CharacterManager.Instance.Player = this;
@@ -16,7 +19,9 @@ public class Player : MonoBehaviour
 
     public void Buff()
     {
-        Debug.Log("On");
+        Debug.Log("On"); //버프효과 받기
+       
+        
     }
 
 }
