@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, transform.forward * 10f);
 
         Ray[] rays = new Ray[4]

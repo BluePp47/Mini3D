@@ -14,5 +14,9 @@ public class Player : MonoBehaviour
         condition = GetComponent<PlayerCondition>();
     }
 
+    public void Buff()
+    {
+        Debug.Log("On");
+    }
 
 }
