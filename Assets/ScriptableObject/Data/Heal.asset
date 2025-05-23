@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5a7943d3a202643b9f697d677800f7, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: "\uD790\uB9C1\uD050\uBE0C"
+  description: "\uCCB4\uB825\uC744 \uD68C\uBCF5\uC2DC\uCF1C \uC90D\uB2C8\uB2E4"
   type: 0
   icon: {fileID: 0}
-  dropPrefabs: {fileID: 0}
+  dropPrefabs: {fileID: 3354815873006940186, guid: 33d69589bf29c1545823096066a6e5c3, type: 3}
   canStack: 0
   maxStackAmount: 0
   Consumables: []
