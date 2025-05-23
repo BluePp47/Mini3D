@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public Data itemData;
     public Action addItem;
+    private Rigidbody _rigidbody;
+
 
     private void Awake()
     {
@@ -18,11 +20,5 @@ public class Player : MonoBehaviour
         condition = GetComponent<PlayerCondition>();
     }
 
-    public void Buff()
-    {
-        Debug.Log("On"); //버프효과 받기
-       
-        
-    }
-
 }
+

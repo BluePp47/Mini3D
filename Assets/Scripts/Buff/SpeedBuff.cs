@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Speed_Buff : MonoBehaviour
+public class SpeedBuff : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float jumpForce = 50f;
+    private Rigidbody _rigidbody;
+  
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("플레이어");
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                Debug.Log("점프동작");
+                _rigidbody = player.GetComponent<Rigidbody>();
+                _rigidbody.AddForce(transform.up * jumpForce*50*Time.timeScale *3.0f);
+            }
+        }
     }
 }

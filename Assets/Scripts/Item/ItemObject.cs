@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public interface IInteractable
@@ -11,6 +12,8 @@ public interface IInteractable
 public class ItemObject : MonoBehaviour, IInteractable
 {
     public Data data;
+    public bool use;
+
 
     public string GetInteractPrompt()
     {
@@ -24,5 +27,15 @@ public class ItemObject : MonoBehaviour, IInteractable
         CharacterManager.Instance.Player.itemData = data;
         CharacterManager.Instance.Player.addItem?.Invoke();
         Destroy(gameObject);
+        use = true;
     }
 }
+
+
+
+
+
+
+
+
+
