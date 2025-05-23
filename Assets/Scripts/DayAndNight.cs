@@ -1,10 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DayNightCycle : MonoBehaviour
+public class DayAndNight : MonoBehaviour
 {
     [Range(0.0f, 1.0f)]
     public float time;
-    public float fullDayLength; //하루의 길이
+    public float fullDayLength;
     public float startTime = 0.4f;
     private float timeRate;
     public Vector3 noon;
@@ -23,13 +25,13 @@ public class DayNightCycle : MonoBehaviour
     public AnimationCurve lightingIntensityMultiplier;
     public AnimationCurve reflectionIntensityMultiplier;
 
-    private void Start()
+     void Start()
     {
         timeRate = 1.0f / fullDayLength;
         time = startTime;
     }
 
-    private void Update()
+     void Update()
     {
         time = (time + timeRate * Time.deltaTime) % 1.0f;
 
@@ -41,12 +43,12 @@ public class DayNightCycle : MonoBehaviour
 
     }
 
-    void UpdateLighting(Light lightSource, Gradient colorGradiant, AnimationCurve intensityCurve)
+    void UpdateLighting(Light lightSource, Gradient Gradiant, AnimationCurve intensityCurve)
     {
         float intensity = intensityCurve.Evaluate(time);
 
         lightSource.transform.eulerAngles = (time - (lightSource == sun ? 0.25f : 0.75f)) * noon * 4.0f;
-        lightSource.color = colorGradiant.Evaluate(time);
+        lightSource.color = Gradiant.Evaluate(time);
         lightSource.intensity = intensity;
 
         GameObject go = lightSource.gameObject;

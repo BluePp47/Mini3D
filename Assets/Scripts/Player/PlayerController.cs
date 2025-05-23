@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //¸¶¿ì½º ¼û±â´Â ¹ý
+        //ë§ˆìš°ìŠ¤ ìˆ¨ê¸°ëŠ” ë²•
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -117,6 +118,7 @@ public class PlayerController : MonoBehaviour
             new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
             new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
             new Ray(transform.position + (-transform.right * 0.2f) +(transform.up * 0.01f), Vector3.down)
+
         };
 
         for (int i = 0; i < rays.Length; i++)
@@ -135,4 +137,25 @@ public class PlayerController : MonoBehaviour
         canlook = !toggle;
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * 10f);
+
+        Ray[] rays = new Ray[4]
+        {
+            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.right * 0.2f) +(transform.up * 0.01f), Vector3.down)
+
+        };
+
+        for (int i = 0; i < rays.Length; i++)
+        {
+            Gizmos.DrawRay(rays[i].origin, rays[i].direction * 0.7f);
+        }
+    }
+
+ 
 }
